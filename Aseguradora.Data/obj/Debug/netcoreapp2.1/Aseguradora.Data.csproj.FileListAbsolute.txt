@@ -1,0 +1,9 @@
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\bin\Debug\netcoreapp2.1\Aseguradora.Data.deps.json
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\bin\Debug\netcoreapp2.1\Aseguradora.Data.dll
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\bin\Debug\netcoreapp2.1\Aseguradora.Data.pdb
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\obj\Debug\netcoreapp2.1\Aseguradora.Data.csprojAssemblyReference.cache
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\obj\Debug\netcoreapp2.1\Aseguradora.Data.csproj.CoreCompileInputs.cache
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\obj\Debug\netcoreapp2.1\Aseguradora.Data.AssemblyInfoInputs.cache
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\obj\Debug\netcoreapp2.1\Aseguradora.Data.AssemblyInfo.cs
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\obj\Debug\netcoreapp2.1\Aseguradora.Data.dll
+C:\Users\gfajardo\Documents\Projects\Aseguradora\Aseguradora.Data\obj\Debug\netcoreapp2.1\Aseguradora.Data.pdb
