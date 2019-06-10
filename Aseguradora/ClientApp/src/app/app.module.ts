@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ClienteListaComponent } from './cliente-lista/cliente-lista.component';
 import { ClienteService } from './cliente-lista/cliente.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ClienteService } from './cliente-lista/cliente.service';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ClienteListaComponent
+    ClienteListaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
