@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Aseguradora.Data.Models
 {
-    public class Cliente
+    public class Cliente : IPersona
     {
         public int Id { get; set; }
         public string Cedula { get; set; }
@@ -14,5 +14,11 @@ namespace Aseguradora.Data.Models
         public string Telefono { get; set; }
         public string Ciudad { get; set; }
         public List<Poliza> Polizas { get; set; }
+        public RolDeUsuario Rol { get; set; }
+
+        public Cliente()
+        {
+            Rol = RolDeUsuario.Cliente;
+        }
     }
 }

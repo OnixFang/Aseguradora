@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Aseguradora.Data.Models
 {
-    public interface IEmpleado
+    public interface IPersona
     {
         int Id { get; set; }
         string Nombre { get; set; }
         string Apellido { get; set; }
-        RolDeEmpleado Rol { get; set; }
+        RolDeUsuario Rol { get; set; }
     }
 }
