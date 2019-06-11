@@ -29,27 +29,23 @@ namespace Aseguradora.Controllers
 
         // GET: api/Cliente/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Cliente Get(int id)
         {
-            return "value";
+            return clienteData.GetCliente(id);
         }
 
         // POST: api/Cliente
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Cliente Post([FromBody] Cliente updatedCliente)
         {
+            return clienteData.UpdateCliente(updatedCliente);
         }
 
-        // PUT: api/Cliente/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // DELETE: api/Cliente/Delete
+        [HttpDelete("Delete")]
+        public Cliente Delete(Cliente deletedCliente)
         {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return clienteData.DeleteCliente(deletedCliente);
         }
     }
 }

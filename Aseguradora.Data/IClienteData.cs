@@ -8,5 +8,10 @@ namespace Aseguradora.Data
     public interface IClienteData
     {
         List<Cliente> GetClientes();
+        Cliente GetCliente(int id);
+        Cliente AddCliente(Cliente newCliente);
+        Cliente UpdateCliente(Cliente updatedCliente);
+        Cliente DeleteCliente(Cliente deletedCliente);
+        int Commit();
     }
 }

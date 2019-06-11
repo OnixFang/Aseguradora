@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Aseguradora.Data.Models;
 
@@ -34,9 +35,48 @@ namespace Aseguradora.Data
             };
         }
 
+        public Cliente AddCliente(Cliente newCliente)
+        {
+            clientes.Add(newCliente);
+            return newCliente;
+        }
+
+        public Cliente DeleteCliente(Cliente deletedCliente)
+        {
+            clientes.Remove(deletedCliente);
+            return deletedCliente;
+        }
+
+        public Cliente GetCliente(int id)
+        {
+            var cliente = clientes.FirstOrDefault(c => c.Id == id);
+            return cliente;
+        }
+
         public List<Cliente> GetClientes()
         {
             return clientes;
+        }
+
+        public Cliente UpdateCliente(Cliente updatedCliente)
+        {
+            var cliente = clientes.FirstOrDefault(c => c.Id == updatedCliente.Id);
+            if (cliente != null)
+            {
+                cliente.Nombre = updatedCliente.Nombre;
+                cliente.Apellido = updatedCliente.Apellido;
+                cliente.Cedula = updatedCliente.Cedula;
+                cliente.Telefono = updatedCliente.Telefono;
+                cliente.Direccion = updatedCliente.Direccion;
+                cliente.Ciudad = updatedCliente.Ciudad;
+                cliente.Polizas = updatedCliente.Polizas;
+            }
+            return cliente;
+        }
+
+        public int Commit()
+        {
+            return 0;
         }
     }
 }

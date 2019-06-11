@@ -8,10 +8,11 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { ClienteListaComponent } from './cliente-lista/cliente-lista.component';
-import { ClienteService } from './cliente-lista/cliente.service';
+import { ClienteService } from './_services/cliente.service';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './login/auth.guard';
-import { Rol } from './login/rol.enum';
+import { Rol } from './_models/rol.enum';
+import { ClienteAddComponent } from './cliente-add/cliente-add.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { Rol } from './login/rol.enum';
         NavMenuComponent,
         HomeComponent,
         ClienteListaComponent,
-        LoginComponent
+        LoginComponent,
+        ClienteAddComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { IUsuario } from './iusuario';
+import { IUsuario } from '../_models/iusuario';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';

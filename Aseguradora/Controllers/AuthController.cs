@@ -41,7 +41,7 @@ namespace Aseguradora.Controllers
             return usuarioData.GetUsuario(credenciales);
         }
 
-        // POST: api/Auth
+        // POST: api/Auth/Add
         [HttpPost("Add")]
         public Usuario Post([FromBody] Usuario newUsuario)
         {
