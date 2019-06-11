@@ -37,6 +37,8 @@ namespace Aseguradora.Data
 
         public Cliente AddCliente(Cliente newCliente)
         {
+            int maxId = clientes.Max(c => c.Id);
+            newCliente.Id = maxId;
             clientes.Add(newCliente);
             return newCliente;
         }

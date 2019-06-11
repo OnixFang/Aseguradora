@@ -36,7 +36,14 @@ namespace Aseguradora.Controllers
 
         // POST: api/Cliente
         [HttpPost]
-        public Cliente Post([FromBody] Cliente updatedCliente)
+        public Cliente Post([FromBody] Cliente newCliente)
+        {
+            return clienteData.AddCliente(newCliente);
+        }
+
+        // POST: api/Cliente/Update
+        [HttpPost("Update")]
+        public Cliente Update([FromBody] Cliente updatedCliente)
         {
             return clienteData.UpdateCliente(updatedCliente);
         }

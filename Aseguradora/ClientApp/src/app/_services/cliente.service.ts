@@ -19,8 +19,12 @@ export class ClienteService {
         return this.http.get<ICliente>(`${this.clientApi}/${id}`);
     }
 
-    UpdateCliente(cliente: ICliente): Observable<ICliente> {
+    AddCliente(cliente: ICliente): Observable<ICliente> {
         return this.http.post<ICliente>(this.clientApi, cliente);
+    }
+
+    UpdateCliente(cliente: ICliente): Observable<ICliente> {
+        return this.http.post<ICliente>(`${this.clientApi}/Update`, cliente);
     }
 
     DeleteCliente(cliente: ICliente): Observable<ICliente> {

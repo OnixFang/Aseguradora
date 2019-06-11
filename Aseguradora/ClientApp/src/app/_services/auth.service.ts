@@ -3,6 +3,7 @@ import { IUsuario } from '../_models/iusuario';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -18,7 +19,7 @@ export class AuthService {
         return JSON.parse(localStorage.getItem('currentUser'));
     }
 
-    login(credenciales) {
+    login(credenciales): Observable<IUsuario> {
         return this.http.post<IUsuario>(`${this.authApi}/Login`, credenciales).pipe(map(usuario => {
             localStorage.setItem('currentUser', JSON.stringify(usuario));
             return usuario;

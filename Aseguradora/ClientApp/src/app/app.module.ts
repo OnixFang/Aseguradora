@@ -30,8 +30,9 @@ import { ClienteAddComponent } from './cliente-add/cliente-add.component';
         RouterModule.forRoot([
             { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [AuthGuard] },
             { path: 'clientes', component: ClienteListaComponent, canActivate: [AuthGuard], data: { roles: [Rol.Agente, Rol.Gerente, Rol.Supervisor] } },
+            { path: 'add-cliente', component: ClienteAddComponent, canActivate: [AuthGuard], data: { roles: [Rol.Agente, Rol.Gerente, Rol.Supervisor] } },
             { path: 'login', component: LoginComponent },
-            // otherwise redirect to home
+
             { path: '**', redirectTo: '' }
         ])
     ],
