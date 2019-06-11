@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Icliente } from './icliente';
+import { ICliente } from './ICliente';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
@@ -11,7 +11,7 @@ export class ClienteService {
     this.clientApi = baseUrl + 'api/Cliente';
   }
 
-  GetAll(): Observable<Icliente[]> {
-    return this.http.get<Icliente[]>(this.clientApi);
+  GetAll(): Observable<ICliente[]> {
+    return this.http.get<ICliente[]>(this.clientApi);
   }
 }

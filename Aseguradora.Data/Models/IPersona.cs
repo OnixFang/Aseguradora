@@ -9,6 +9,5 @@ namespace Aseguradora.Data.Models
         int Id { get; set; }
         string Nombre { get; set; }
         string Apellido { get; set; }
-        RolDeUsuario Rol { get; set; }
     }
 }

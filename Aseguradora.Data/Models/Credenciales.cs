@@ -4,12 +4,9 @@ using System.Text;
 
 namespace Aseguradora.Data.Models
 {
-    public class Usuario
+    public class Credenciales
     {
-        public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public IPersona Persona { get; set; }
-        public RolDeUsuario Rol { get; set; }
     }
 }

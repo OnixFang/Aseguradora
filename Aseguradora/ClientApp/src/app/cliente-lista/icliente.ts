@@ -1,6 +1,6 @@
 import { Ipoliza } from "../poliza/ipoliza";
 
-export interface Icliente {
+export interface ICliente {
   Id: number;
   Cedula: string;
   Nombre: string;

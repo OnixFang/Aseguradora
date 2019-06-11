@@ -21,7 +21,9 @@ namespace Aseguradora
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // API Services
             services.AddSingleton<IClienteData, InMemoryClientes>();
+            services.AddSingleton<IUsuarioData, InMemoryUsuarios>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
