@@ -45,8 +45,9 @@ namespace Aseguradora.Data
 
         public Cliente DeleteCliente(Cliente deletedCliente)
         {
-            clientes.Remove(deletedCliente);
-            return deletedCliente;
+            var cliente = clientes.FirstOrDefault(c => c.Id == deletedCliente.Id);
+            clientes.Remove(cliente);
+            return cliente;
         }
 
         public Cliente GetCliente(int id)

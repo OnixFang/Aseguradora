@@ -49,7 +49,7 @@ namespace Aseguradora.Controllers
         }
 
         // DELETE: api/Cliente/Delete
-        [HttpDelete("Delete")]
+        [HttpPost("Delete")]
         public Cliente Delete(Cliente deletedCliente)
         {
             return clienteData.DeleteCliente(deletedCliente);

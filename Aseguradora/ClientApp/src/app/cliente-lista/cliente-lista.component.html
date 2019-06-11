@@ -22,6 +22,7 @@
       <td>{{ cliente.direccion }}</td>
       <td>{{ cliente.telefono }}</td>
       <td><a class="btn btn-success" [routerLink]="['/cliente', cliente.id]">Editar</a></td>
+      <td><button class="btn btn-danger" (click)="delete(cliente)">Eliminar</button></td>
     </tr>
   </tbody>
 </table>
