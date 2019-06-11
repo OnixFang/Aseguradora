@@ -9,43 +9,40 @@ namespace Aseguradora.Data
     public class InMemoryUsuarios : IUsuarioData
     {
         private readonly List<Usuario> usuarios;
-        private readonly IEmpleadoData empleadoData;
 
-        public InMemoryUsuarios(IEmpleadoData empleadoData)
+        public InMemoryUsuarios()
         {
             usuarios = new List<Usuario>()
             {
                 new Usuario
                 {
                     Id = 1,
-                    Username = "OnixAgente",
-                    Password = "Test1234",
+                    Username = "agente",
+                    Password = "agente",
                     Persona = null,
                     Rol = RolDeUsuario.Agente
                 },
                 new Usuario
                 {
                     Id = 2,
-                    Username = "OnixSupervisor",
-                    Password = "Test1234",
+                    Username = "supervisor",
+                    Password = "supervisor",
                     Persona = null,
                     Rol = RolDeUsuario.Supervisor
                 },
                 new Usuario
                 {
                     Id = 3,
-                    Username = "OnixGerente",
-                    Password = "Test1234",
+                    Username = "gerente",
+                    Password = "gerente",
                     Persona = null,
                     Rol = RolDeUsuario.Gerente
                 }
             };
-            this.empleadoData = empleadoData;
         }
 
         public Usuario AddUsuario(Usuario newUsuario)
         {
-            empleadoData.AddEmpleado(newUsuario.Persona);
             int maxId = usuarios.Max(u => u.Id);
             newUsuario.Id = maxId;
             usuarios.Add(newUsuario);
