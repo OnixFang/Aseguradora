@@ -2,7 +2,6 @@
 {
     public enum RolDeUsuario
     {
-        Cliente,
         Agente,
         Supervisor,
         Gerente

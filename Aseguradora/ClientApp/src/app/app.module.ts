@@ -30,8 +30,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'clientes', component: ClienteListaComponent},
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'login', component: LoginComponent }
     ])
   ],
   providers: [ClienteService],

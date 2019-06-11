@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Icliente } from './icliente';
+import { ICliente } from './ICliente';
 import { ClienteService } from './cliente.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ClienteService } from './cliente.service';
   styleUrls: ['./cliente-lista.component.css']
 })
 export class ClienteListaComponent implements OnInit {
-  public clientes: Icliente[];
+  public clientes: ICliente[];
 
   constructor(private clienteService: ClienteService) { }
 
