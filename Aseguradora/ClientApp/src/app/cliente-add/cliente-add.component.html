@@ -1,35 +1,41 @@
 <h1>{{pageTitle}}</h1>
 
-<div class="row justify-content-center">
-    <div class="col-4">
-        <div class="form-group">
-            <label for="txtNombre">Nombre</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.nombre" id="txtUsername"
-                placeholder="Nombre...">
+<p *ngIf="!cliente">Loading...</p>
+
+<div *ngIf="cliente">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="form-group">
+                <label for="txtNombre">Nombre</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.nombre" id="txtUsername"
+                    placeholder="Nombre...">
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Apellido</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.apellido" id="txtApellido"
+                    placeholder="Apellido...">
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Cédula</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.cedula" id="txtCedula"
+                    placeholder="Cédula...">
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Teléfono</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.telefono" id="txtTelefono"
+                    placeholder="Teléfono...">
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Dirección</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.direccion" id="txtDireccion"
+                    placeholder="Dirección...">
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Ciudad</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.ciudad" id="txtCiudad"
+                    placeholder="Ciudad...">
+            </div>
+            <button class="btn btn-success" (click)="crear()">Guardar</button>
         </div>
-        <div class="form-group">
-            <label for="txtPassword">Apellido</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.apellido" id="txtApellido"
-                placeholder="Apellido...">
-        </div>
-        <div class="form-group">
-            <label for="txtPassword">Cédula</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.cedula" id="txtCedula" placeholder="Cédula...">
-        </div>
-        <div class="form-group">
-            <label for="txtPassword">Teléfono</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.telefono" id="txtTelefono"
-                placeholder="Teléfono...">
-        </div>
-        <div class="form-group">
-            <label for="txtPassword">Dirección</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.direccion" id="txtDireccion"
-                placeholder="Dirección...">
-        </div>
-        <div class="form-group">
-            <label for="txtPassword">Ciudad</label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.ciudad" id="txtCiudad" placeholder="Ciudad...">
-        </div>
-        <button class="btn btn-success" (click)="crear()">Crear</button>
     </div>
 </div>
