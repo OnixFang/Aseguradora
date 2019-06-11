@@ -20,20 +20,6 @@ namespace Aseguradora.Controllers
             this.usuarioData = usuarioData;
         }
 
-        //// GET: api/Auth
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET: api/Auth/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
         // GET: api/Auth
         [HttpPost("Login")]
         public Usuario Login([FromBody] Credenciales credenciales)
@@ -55,8 +41,8 @@ namespace Aseguradora.Controllers
             return usuarioData.UpdateUsuario(updatedUsuario);
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete]
+        // DELETE: api/Auth/Delete
+        [HttpPost("Delete")]
         public Usuario Delete([FromBody] Usuario deletedUsuario)
         {
             return usuarioData.DeleteUsuario(deletedUsuario);

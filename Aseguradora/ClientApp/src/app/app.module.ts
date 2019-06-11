@@ -14,6 +14,7 @@ import { AuthGuard } from './login/auth.guard';
 import { Rol } from './_models/rol.enum';
 import { ClienteAddComponent } from './cliente-add/cliente-add.component';
 import { ClienteEditComponent } from './cliente-add/cliente-edit.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { ClienteEditComponent } from './cliente-add/cliente-edit.component';
         ClienteListaComponent,
         LoginComponent,
         ClienteAddComponent,
-        ClienteEditComponent
+        ClienteEditComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -35,6 +37,7 @@ import { ClienteEditComponent } from './cliente-add/cliente-edit.component';
             { path: 'add-cliente', component: ClienteAddComponent, canActivate: [AuthGuard], data: { roles: [Rol.Agente, Rol.Gerente, Rol.Supervisor] } },
             { path: 'cliente/:id', component: ClienteEditComponent, canActivate: [AuthGuard], data: { roles: [Rol.Agente, Rol.Gerente, Rol.Supervisor] } },
             { path: 'login', component: LoginComponent },
+            { path: 'register', component: RegisterComponent },
 
             { path: '**', redirectTo: '' }
         ])
