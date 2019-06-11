@@ -9,7 +9,7 @@ namespace Aseguradora.Data.Models
         public int Id { get; set; }
         public Cliente Cliente { get; set; }
         public Vehiculo Vehiculo { get; set; }
-        public Agente Agente { get; set; }
+        public Empleado Agente { get; set; }
         public DateTime Fecha { get; set; }
     }
 }
