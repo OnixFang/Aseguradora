@@ -30,4 +30,11 @@ export class AuthService {
         localStorage.setItem('currentUser', null);
         this.route.navigateByUrl('/login');
     }
+
+    register(newUsuario: IUsuario): Observable<IUsuario> {
+        return this.http.post<IUsuario>(`${this.authApi}/Add`, newUsuario).pipe(map(usuario => {
+            this.route.navigateByUrl('/');
+            return usuario;
+        }));
+    }
 }

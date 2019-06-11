@@ -9,8 +9,9 @@ namespace Aseguradora.Data
     public class InMemoryUsuarios : IUsuarioData
     {
         private readonly List<Usuario> usuarios;
+        private readonly IEmpleadoData empleadoData;
 
-        public InMemoryUsuarios()
+        public InMemoryUsuarios(IEmpleadoData empleadoData)
         {
             usuarios = new List<Usuario>()
             {
@@ -39,10 +40,14 @@ namespace Aseguradora.Data
                     Rol = RolDeUsuario.Gerente
                 }
             };
+            this.empleadoData = empleadoData;
         }
 
         public Usuario AddUsuario(Usuario newUsuario)
         {
+            empleadoData.AddEmpleado(newUsuario.Persona);
+            int maxId = usuarios.Max(u => u.Id);
+            newUsuario.Id = maxId;
             usuarios.Add(newUsuario);
             return newUsuario;
         }
