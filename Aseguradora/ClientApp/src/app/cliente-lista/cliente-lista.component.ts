@@ -16,7 +16,6 @@ export class ClienteListaComponent implements OnInit {
     this.clienteService.GetAll().subscribe(
       (clientes) => {
         this.clientes = clientes;
-        console.log(this.clientes[0]);
       },
       error => console.log(error)
     );

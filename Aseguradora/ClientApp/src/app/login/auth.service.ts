@@ -1,25 +1,32 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { IUsuario } from './iusuario';
-import { UsuarioService } from './usuario.service';
+import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    constructor(private usuarioService: UsuarioService) { }
+    private authApi: string;
+
+    constructor(private http: HttpClient, private route: Router, @Inject('BASE_URL') baseUrl: string) {
+        this.authApi = baseUrl + 'api/Auth';
+    }
 
     currentUser(): IUsuario {
         return JSON.parse(localStorage.getItem('currentUser'));
     }
 
     login(credenciales) {
-        this.usuarioService.GetUsuario(credenciales).subscribe((usuario) => {
+        return this.http.post<IUsuario>(`${this.authApi}/Login`, credenciales).pipe(map(usuario => {
             localStorage.setItem('currentUser', JSON.stringify(usuario));
             return usuario;
-        });
+        }));
     }
 
     logout(): void {
         localStorage.setItem('currentUser', null);
+        this.route.navigateByUrl('/login');
     }
 }

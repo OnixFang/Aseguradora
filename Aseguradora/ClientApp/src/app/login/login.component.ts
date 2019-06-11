@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -11,17 +12,19 @@ export class LoginComponent implements OnInit {
     username: string;
     password: string;
 
-    constructor(private auth: AuthService) { }
+    constructor(private auth: AuthService, private router: Router) { }
 
     login(): void {
         let credenciales = { username: this.username, password: this.password };
-        let usuario = this.auth.login(credenciales);
-        if (usuario == null) {
-            this.errorMessage = 'Invalid username/password.';
-        }
-        else {
-            this.errorMessage = null;
-        }
+        this.auth.login(credenciales).pipe().subscribe(usuario => {
+            if (usuario == null) {
+                this.errorMessage = 'Nombre de usuario/contraseña incorrectos.';
+            }
+            else {
+                this.errorMessage = null;
+                this.router.navigateByUrl("/");
+            }
+        });
     }
 
     ngOnInit() {

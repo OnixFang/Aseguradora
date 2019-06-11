@@ -7,33 +7,33 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ClienteListaComponent } from './cliente-lista/cliente-lista.component';
 import { ClienteService } from './cliente-lista/cliente.service';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './login/auth.guard';
+import { Rol } from './login/rol.enum';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
-    ClienteListaComponent,
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'clientes', component: ClienteListaComponent},
-      { path: 'login', component: LoginComponent }
-    ])
-  ],
-  providers: [ClienteService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavMenuComponent,
+        HomeComponent,
+        ClienteListaComponent,
+        LoginComponent
+    ],
+    imports: [
+        BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+        HttpClientModule,
+        FormsModule,
+        RouterModule.forRoot([
+            { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+            { path: 'clientes', component: ClienteListaComponent, canActivate: [AuthGuard], data: { roles: [Rol.Agente, Rol.Gerente, Rol.Supervisor] } },
+            { path: 'login', component: LoginComponent },
+            // otherwise redirect to home
+            { path: '**', redirectTo: '' }
+        ])
+    ],
+    providers: [ClienteService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
